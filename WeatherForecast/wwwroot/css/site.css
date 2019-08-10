@@ -37,11 +37,78 @@ body {
 }
 
 
-#today-cell {
-
+html, body {
+    min-height: 100%;
 }
 
+html {
+    height: 100%;
+}
 
-.future-day-cell {
+body {
+    font: 200 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #3399cc;
+    color: #fff;
+    border: 20px solid #2b81ac;
+}
 
+div {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+header, footer {
+    padding: 30px 0;
+}
+
+ul, li {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    width: 70%;
+    background-color: white;
+    text-align: center;
+    font-size: 0;
+}
+
+ul:hover > li {
+    opacity: 0.6;
+}
+
+ul li:hover {
+    opacity: 1;
+}
+
+ul li:active {
+    background: white;
+}
+
+li {
+    padding: 30px 10px;
+    border: 3px solid #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+}
+
+.current-day {
+    background-color: #3399cc;
+    width: 50%;
+}
+
+.future-day {
+    background-color: #33cccc;
+    width: 25%;
+}
+
+* {
+    transition: all .1s ease-in;
 }
