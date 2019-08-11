@@ -9,6 +9,11 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using DarkSky.Models;
+using DarkSky.Services;
+using DarkSky.Extensions;
+using WeatherForecast.HttpClientService;
+using GoogleMaps.LocationServices;
 
 namespace WeatherForecast {
     public class Startup {
@@ -45,6 +50,32 @@ namespace WeatherForecast {
             app.UseCookiePolicy();
 
             app.UseMvc();
+
+            // TEST HARD CODED WEATHER-GET LOCATION
+            WeatherService weatherService = new WeatherService();
+            //_ = weatherService.GetCurrentWeatherAsync(42.915, -78.741);
+            Console.WriteLine("TESTING WEATHER LOCATION GET FROM - WSU DAVIS");
+            _ = weatherService.GetCurrentWeatherAsync(41.134500, -111.951530);
+        }
+
+        public void TestGeoLocationService()
+        {
+            var address = "Ogden, UT";
+            Console.WriteLine("ADDRESS: " + address);
+
+            var locationService = new GoogleLocationService();
+            var point = locationService.GetLatLongFromAddress(address);
+
+            var latitude = point.Latitude;
+            var longitude = point.Longitude;
+
+            GetCurrentWeatherForLocation(latitude, longitude);
+        }
+
+        public void GetCurrentWeatherForLocation(double latitude, double longitude)
+        {
+            WeatherService weatherService = new WeatherService();
+            _ = weatherService.GetCurrentWeatherAsync(latitude, longitude);
         }
     }
 }

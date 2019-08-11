@@ -7,6 +7,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="DarkSkyCore" Version="5.1.16" />
+    <PackageReference Include="GoogleMaps.LocationServices" Version="1.2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="HttpClientService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="HttpClient\HttpClient.cs" />
+  </ItemGroup>
 </Project>
