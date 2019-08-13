@@ -30,13 +30,17 @@ namespace WeatherForecast.HttpClientService
                 Console.WriteLine("TEMP LOW:" + forecast.Response.Currently.TemperatureLow.ToString());
                 Console.WriteLine("PRECIP PROBABILITY:" + forecast.Response.Currently.TemperatureLow.ToString());
 
-                // ADDING WEATHER ELEMENTS TO LIST ARRAY
+                // ADDING WEATHER ELEMENTS TO LIST ARRAY - KEY: [0]Summary, [1]Icon, [2]Temperature, [3]Temp High, [4]Temp Low, [5]PrecipProbability
                 currentWeatherData.Add(forecast.Response.Currently.Summary);
                 currentWeatherData.Add(forecast.Response.Currently.Icon.ToString());
-                currentWeatherData.Add(forecast.Response.Currently.Temperature.ToString());
-                currentWeatherData.Add(forecast.Response.Daily.Data[0].TemperatureHigh.ToString());
-                currentWeatherData.Add(forecast.Response.Daily.Data[0].TemperatureLow.ToString());
-                currentWeatherData.Add(forecast.Response.Currently.PrecipProbability.ToString());
+                var currentTemp = Math.Round((decimal)forecast.Response.Currently.Temperature, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(currentTemp);
+                var currentHigh = Math.Round((decimal)forecast.Response.Daily.Data[0].TemperatureHigh, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(currentHigh);
+                var currentLow = Math.Round((decimal)forecast.Response.Daily.Data[0].TemperatureLow, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(currentLow);
+                var precipProbPercentage = String.Format("{0:P2}", forecast.Response.Currently.PrecipProbability).ToString();
+                currentWeatherData.Add(precipProbPercentage);
 
                 return currentWeatherData;
             }

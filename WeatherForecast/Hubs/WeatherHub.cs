@@ -17,7 +17,7 @@ namespace WeatherForecast.Hubs
             dlng = Convert.ToDouble(lng);
 
             List<string> result = await weatherService.GetCurrentWeatherAsync(dlng,dlat);
-            await Clients.All.SendAsync("ReceiveResult", result);
+            await Clients.All.SendAsync("UpdateCurrentWeather", result);
         }
     }
 }
