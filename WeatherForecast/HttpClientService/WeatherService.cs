@@ -21,18 +21,29 @@ namespace WeatherForecast.HttpClientService
 
             if (forecast?.IsSuccessStatus == true)
             {
-                Console.WriteLine("CURRENT SUMMARY: " + forecast.Response.Currently.Summary);
-                currentWeatherData.Add(forecast.Response.Currently.Summary);
-                let temp = forecast.Response.Currently.Temperature.ToString;
-                currentWeatherData.Add(temp);
+                // DEBUG - CONSOLE OUTPUT TESTS
+                Console.WriteLine("FORECAST SUCCESS");
+                Console.WriteLine("SUMMARY:" + forecast.Response.Currently.Summary);
+                Console.WriteLine("ICON:" + forecast.Response.Currently.Icon.ToString());
+                Console.WriteLine("TEMPERATURE:" + forecast.Response.Currently.Temperature.ToString());
+                Console.WriteLine("TEMP HIGH:" + forecast.Response.Currently.TemperatureHigh.ToString());
+                Console.WriteLine("TEMP LOW:" + forecast.Response.Currently.TemperatureLow.ToString());
+                Console.WriteLine("PRECIP PROBABILITY:" + forecast.Response.Currently.TemperatureLow.ToString());
 
+                // ADDING WEATHER ELEMENTS TO LIST ARRAY
+                currentWeatherData.Add(forecast.Response.Currently.Summary);
+                currentWeatherData.Add(forecast.Response.Currently.Icon.ToString());
+                currentWeatherData.Add(forecast.Response.Currently.Temperature.ToString());
+                currentWeatherData.Add(forecast.Response.Daily.Data[0].TemperatureHigh.ToString());
+                currentWeatherData.Add(forecast.Response.Daily.Data[0].TemperatureLow.ToString());
+                currentWeatherData.Add(forecast.Response.Currently.PrecipProbability.ToString());
 
                 return currentWeatherData;
             }
             else
             {
-                Console.WriteLine("No current weather data");
                 currentWeatherData.Add("No current weather data");
+
                 return currentWeatherData;
             }
         }

@@ -54,7 +54,8 @@ namespace WeatherForecast {
             // TEST HARD CODED WEATHER-GET LOCATION
             WeatherService weatherService = new WeatherService();
             Console.WriteLine("TESTING WEATHER LOCATION GET FROM - WSU DAVIS");
-            _ = weatherService.GetCurrentWeatherAsync(41.134500, -111.951530);
+            //_ = weatherService.GetCurrentWeatherAsync(41.134500, -111.951530);
+            _ = GetCurrentWeatherForLocationAsync(41.134500, -111.951530);
         }
 
         public void TestGeoLocationService()
@@ -68,13 +69,15 @@ namespace WeatherForecast {
             var latitude = point.Latitude;
             var longitude = point.Longitude;
 
-            GetCurrentWeatherForLocation(latitude, longitude);
+            _ = GetCurrentWeatherForLocationAsync(latitude, longitude);
         }
 
-        public void GetCurrentWeatherForLocation(double latitude, double longitude)
+        public async Task GetCurrentWeatherForLocationAsync(double latitude, double longitude)
         {
             WeatherService weatherService = new WeatherService();
-            _ = weatherService.GetCurrentWeatherAsync(latitude, longitude);
+            List<string> currentWeatherData = await weatherService.GetCurrentWeatherAsync(latitude, longitude);
+            Console.WriteLine("CURRENT WEATHER DATA");
+            currentWeatherData.ForEach(Console.WriteLine);
         }
     }
 }
