@@ -8,6 +8,7 @@ var long = "";
 //Gets the coordinates from the 'opencagedata' API from the city passed into the textbox
 //Assigns the lat and long variables.
 function getGeoCoords() {
+    console.log("test");
     var city = document.getElementById("city").value;
     console.log(city);
     var converter_url = "https://api.opencagedata.com/geocode/v1/json?q=" + city + "&key=ae9fb52ab8b04fe783dc63dffb7c2e63";

@@ -16,6 +16,24 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+<head runat="server">
+    <title></title>
+    <script type="text/javascript">
+        function HandleIT() {
+            var name = document.getElementById('<%=txtname.ClientID %>').value;
+            var address = document.getElementById('<%=txtaddress.ClientID %>').value;
+
+            PageMethods.ProcessIT(name, address, onSucess, onError);
+            function onSucess(result) {
+                alert(result);
+            }
+
+            function onError(result) {
+                alert('Something wrong.');
+            }
+        }
+    </script>
+</head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -28,9 +46,11 @@
                 </button>
                 <a asp-page="/Index" class="navbar-brand">WeatherForecast</a>
             </div>
-            <div class="navbar-collapse collapse">
-
-            </div>
+            @*<div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-page="/Index">Home</a></li>
+                </ul>
+            </div>*@
         </div>
     </nav>
 

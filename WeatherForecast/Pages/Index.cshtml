@@ -4,5 +4,23 @@
     ViewData["Title"] = "Home page";
 }
 
-<input id="city" type="text"/>
-<input id="btn" type="button" value="Search" onclick="getGeoCoords()" />
+
+<input id="city" type="text" />
+<input id="btn" type="button" value="Search"/>
+<div><p id="result"></p></div>
+
+
+
+<div class="row">
+    <div>
+        <ul>
+            <li class="current-day"><p>Today</p><img id="currentIcon" src="~/images/clear.png" /><p id="currentTemp">Current Temp: 73</p><p id="currentHiLo">Low/High: 59/79</p><p id="currentChanceOfRain">Chance of Rain: 15%</p></li>
+            <li class="future-day"><p>Tomorrow</p><img id="dayTwoIcon" src="~/images/clear.png" /><p id="dayTwoHiLo">Low/High: 52/83</p><p id="dayTwoChanceOfRain">Chance of Rain: 25%</p></li>
+            <li class="future-day"><p>Day 3</p><img id="dayThreeIcon" src="~/images/clear.png" /><p id="dayThreeHiLo">Low/High: 63/84</p><p id="dayThreeChanceOfRain">Chance of Rain: 12%</p></li>
+            <li class="future-day"><p>Day 4</p><img id="dayFourIcon" src="~/images/clear.png" /><p id="dayFourHiLo">Low/High: 66/89</p><p id="dayFourChanceOfRain">Chance of Rain: 8%</p></li>
+            <li class="future-day"><p>Day 5</p><img id="dayFiveIcon" src="~/images/clear.png" /><p id="dayFiveHiLo">Low/High: 52/73</p><p id="dayFiveChanceOfRain">Chance of Rain: 67%</p></li>
+        </ul>
+    </div>
+</div>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/weather.js"></script>

@@ -14,6 +14,8 @@ using DarkSky.Services;
 using DarkSky.Extensions;
 using WeatherForecast.HttpClientService;
 using GoogleMaps.LocationServices;
+using WeatherForecast.Hubs;
+
 
 namespace WeatherForecast {
     public class Startup {
@@ -33,6 +35,8 @@ namespace WeatherForecast {
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSignalR();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,11 @@ namespace WeatherForecast {
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<WeatherHub>("/weatherHub");
+            });
 
             app.UseMvc();
 
