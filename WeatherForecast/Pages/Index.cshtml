@@ -4,5 +4,11 @@
     ViewData["Title"] = "Home page";
 }
 
-<input id="city" type="text"/>
-<input id="btn" type="button" value="Search" onclick="getGeoCoords()" />
+
+<input id="city" type="text" />
+<input id="btn" type="button" value="Search"/>
+<div><p id="result"></p></div>
+
+
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/weather.js"></script>
