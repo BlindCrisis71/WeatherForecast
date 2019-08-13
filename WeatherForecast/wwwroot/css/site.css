@@ -1,40 +1,31 @@
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
-for details on configuring this project to bundle and minify static web assets. */
-body {
+/*body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
 }
 
-/* QR code generator */
 #qrCode {
     margin: 15px;
 }
 
-/* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
     .carousel-caption {
         display: none;
     }
-}
+}*/
 
 
 html, body {
@@ -47,9 +38,9 @@ html {
 
 body {
     font: 200 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    background-color: #3399cc;
+    /*background-color: #3399cc;
     color: #fff;
-    border: 20px solid #2b81ac;
+    border: 20px solid #2b81ac;*/
 }
 
 div {
@@ -63,19 +54,19 @@ header, footer {
 
 ul, li {
     display: inline-block;
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
 
 ul {
     width: 70%;
     background-color: white;
-    text-align: center;
+    /*text-align: center;*/
     font-size: 0;
 }
 
-ul:hover > li {
+/*ul:hover > li {
     opacity: 0.6;
 }
 
@@ -85,7 +76,7 @@ ul li:hover {
 
 ul li:active {
     background: white;
-}
+}*/
 
 li {
     padding: 30px 10px;
@@ -109,6 +100,6 @@ p {
     width: 25%;
 }
 
-* {
+/** {
     transition: all .1s ease-in;
-}
+}*/
