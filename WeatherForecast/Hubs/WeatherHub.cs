@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WeatherForecast.HttpClientService;
 
@@ -15,7 +16,7 @@ namespace WeatherForecast.Hubs
             dlat = Convert.ToDouble(lat);
             dlng = Convert.ToDouble(lng);
 
-            string result = await weatherService.GetCurrentWeatherAsync(dlng,dlat);
+            List<string> result = await weatherService.GetCurrentWeatherAsync(dlng,dlat);
             await Clients.All.SendAsync("ReceiveResult", result);
         }
     }
