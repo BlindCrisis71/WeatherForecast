@@ -53,7 +53,6 @@ namespace WeatherForecast {
 
             // TEST HARD CODED WEATHER-GET LOCATION
             WeatherService weatherService = new WeatherService();
-            //_ = weatherService.GetCurrentWeatherAsync(42.915, -78.741);
             Console.WriteLine("TESTING WEATHER LOCATION GET FROM - WSU DAVIS");
             _ = weatherService.GetCurrentWeatherAsync(41.134500, -111.951530);
         }
