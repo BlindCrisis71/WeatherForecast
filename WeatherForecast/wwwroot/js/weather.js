@@ -19,8 +19,44 @@ connection.on("UpdateCurrentWeather", function (result) {
     // KEY: [0]Summary, [1]Icon, [2]Temperature, [3]Temp High, [4]Temp Low, [5]PrecipProbability
     document.getElementById("currentSummary").innerText = result[0];
     document.getElementById("currentTemp").innerText = "Current Temperature: " + result[2] + " F °";
-    document.getElementById("currentHiLo").innerText = "Low/High: " + result[3] + "/" + result[4];
+    document.getElementById("currentHiLo").innerText = "High/Low: " + result[3] + "/" + result[4];
     document.getElementById("currentChanceOfRain").innerText = "Chance Of Rain: " + result[5];
+
+    var currentIcon = document.getElementById("currentIcon");
+    currentIcon.innerText = "ICON TEST: " + result[1];
+    switch (result[1])
+      {
+        case "Sunny":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "PartlyCloudyDay":
+            currentIcon.src = "images/partly_sunny.png";
+            break;
+        case "ClearNight":
+            currentIcon.src = "images/clear.png";
+            break;
+        case "Cloudy":
+            currentIcon.src = "images/cloudy.png";
+            break;
+        case "PartlyCloudyNight":
+            currentIcon.src = "images/partly_cloudy.png";
+            break;
+        case "Rain":
+            currentIcon.src = "images/rain.png";
+            break;
+        case "Snow":
+            currentIcon.src = "images/snow.png";
+            break;
+        case "Sleet":
+            currentIcon.src = "images/sleet.png";
+            break;
+        case "Fog":
+            currentIcon.src = "images/foggy.png";
+            break;
+        default:
+            currentIcon.src = "images/thunderstorms.png";
+            break;
+    }
 });
 
 connection.start().then(function () {
