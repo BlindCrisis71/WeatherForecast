@@ -35,6 +35,9 @@ connection.on("UpdateCurrentWeather", function (result) {
         case "ClearNight":
             currentIcon.src = "images/clear.png";
             break;
+        case "ClearDay":
+            currentIcon.src = "images/sunny.png";
+            break;
         case "Cloudy":
             currentIcon.src = "images/cloudy.png";
             break;
@@ -54,9 +57,180 @@ connection.on("UpdateCurrentWeather", function (result) {
             currentIcon.src = "images/foggy.png";
             break;
         default:
-            currentIcon.src = "images/thunderstorms.png";
+            currentIcon.src = "images/sunny.png";
             break;
     }
+
+    // DAY TWO
+    currentIcon = document.getElementById("dayTwoIcon");
+    switch (result[6])
+      {
+        case "Sunny":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "PartlyCloudyDay":
+            currentIcon.src = "images/partly_sunny.png";
+            break;
+        case "ClearNight":
+            currentIcon.src = "images/clear.png";
+            break;
+        case "ClearDay":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "Cloudy":
+            currentIcon.src = "images/cloudy.png";
+            break;
+        case "PartlyCloudyNight":
+            currentIcon.src = "images/partly_cloudy.png";
+            break;
+        case "Rain":
+            currentIcon.src = "images/rain.png";
+            break;
+        case "Snow":
+            currentIcon.src = "images/snow.png";
+            break;
+        case "Sleet":
+            currentIcon.src = "images/sleet.png";
+            break;
+        case "Fog":
+            currentIcon.src = "images/foggy.png";
+            break;
+        default:
+            currentIcon.src = "images/sunny.png";
+            break;
+    }
+
+    document.getElementById("dayTwoHiLo").innerText = "High/Low: " + result[7];
+    document.getElementById("dayTwoChanceOfRain").innerText = "Chance Of Rain: " + result[8];
+
+    // DAY THREE
+
+    currentIcon = document.getElementById("dayThreeIcon");
+    switch (result[9])
+      {
+        case "Sunny":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "PartlyCloudyDay":
+            currentIcon.src = "images/partly_sunny.png";
+            break;
+        case "ClearNight":
+            currentIcon.src = "images/clear.png";
+            break;
+    case "ClearDay":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "Cloudy":
+            currentIcon.src = "images/cloudy.png";
+            break;
+        case "PartlyCloudyNight":
+            currentIcon.src = "images/partly_cloudy.png";
+            break;
+        case "Rain":
+            currentIcon.src = "images/rain.png";
+            break;
+        case "Snow":
+            currentIcon.src = "images/snow.png";
+            break;
+        case "Sleet":
+            currentIcon.src = "images/sleet.png";
+            break;
+        case "Fog":
+            currentIcon.src = "images/foggy.png";
+            break;
+        default:
+            currentIcon.src = "images/sunny.png";
+            break;
+    }
+
+    document.getElementById("dayThreeHiLo").innerText = "High/Low: " + result[10];
+    document.getElementById("dayThreeChanceOfRain").innerText = "Chance Of Rain: " + result[11];
+
+    // DAY FOUR 
+
+    currentIcon = document.getElementById("dayFourIcon");
+    switch (result[12])
+      {
+        case "Sunny":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "PartlyCloudyDay":
+            currentIcon.src = "images/partly_sunny.png";
+            break;
+        case "ClearNight":
+            currentIcon.src = "images/clear.png";
+            break;
+    case "ClearDay":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "Cloudy":
+            currentIcon.src = "images/cloudy.png";
+            break;
+        case "PartlyCloudyNight":
+            currentIcon.src = "images/partly_cloudy.png";
+            break;
+        case "Rain":
+            currentIcon.src = "images/rain.png";
+            break;
+        case "Snow":
+            currentIcon.src = "images/snow.png";
+            break;
+        case "Sleet":
+            currentIcon.src = "images/sleet.png";
+            break;
+        case "Fog":
+            currentIcon.src = "images/foggy.png";
+            break;
+        default:
+            currentIcon.src = "images/partly_cloudy.png";
+            break;
+    }
+
+    document.getElementById("dayFourHiLo").innerText = "High/Low: " + result[13];
+    document.getElementById("dayFourChanceOfRain").innerText = "Chance Of Rain: " + result[14];
+
+        // DAY FIVE 
+
+    currentIcon = document.getElementById("dayFiveIcon");
+    switch (result[15])
+      {
+        case "Sunny":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "PartlyCloudyDay":
+            currentIcon.src = "images/partly_sunny.png";
+            break;
+        case "ClearNight":
+            currentIcon.src = "images/clear.png";
+            break;
+    case "ClearDay":
+            currentIcon.src = "images/sunny.png";
+            break;
+        case "Cloudy":
+            currentIcon.src = "images/cloudy.png";
+            break;
+        case "PartlyCloudyNight":
+            currentIcon.src = "images/partly_cloudy.png";
+            break;
+        case "Rain":
+            currentIcon.src = "images/rain.png";
+            break;
+        case "Snow":
+            currentIcon.src = "images/snow.png";
+            break;
+        case "Sleet":
+            currentIcon.src = "images/sleet.png";
+            break;
+        case "Fog":
+            currentIcon.src = "images/foggy.png";
+            break;
+        default:
+            currentIcon.src = "images/sunny.png";
+            break;
+    }
+
+    document.getElementById("dayFiveHiLo").innerText = "High/Low: " + result[16];
+    document.getElementById("dayFiveChanceOfRain").innerText = "Chance Of Rain: " + result[17];
 });
 
 connection.start().then(function () {

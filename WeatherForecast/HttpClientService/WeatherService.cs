@@ -42,6 +42,41 @@ namespace WeatherForecast.HttpClientService
                 var precipProbPercentage = String.Format("{0:P2}", forecast.Response.Currently.PrecipProbability).ToString();
                 currentWeatherData.Add(precipProbPercentage);
 
+            // ADDING FORECAST WEATHER ELEMENTS - 4 DAYS
+            // KEY: [6,9,12,15]Icon, [7,10,13,16]TempH/L, [8,11,14,17]PrecipProbabily
+
+                // CURRENT + 1 
+                currentWeatherData.Add(forecast.Response.Daily.Data[1].Icon.ToString());
+                var tempHigh = Math.Round((decimal)forecast.Response.Daily.Data[1].TemperatureHigh, MidpointRounding.AwayFromZero).ToString();
+                var tempLow = Math.Round((decimal)forecast.Response.Daily.Data[1].TemperatureLow, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(tempHigh + "/" + tempLow);
+                precipProbPercentage = String.Format("{0:P2}", forecast.Response.Daily.Data[1].PrecipProbability).ToString();
+                currentWeatherData.Add(precipProbPercentage);
+
+                // CURRENT + 2
+                currentWeatherData.Add(forecast.Response.Daily.Data[2].Icon.ToString());
+                tempHigh = Math.Round((decimal)forecast.Response.Daily.Data[2].TemperatureHigh, MidpointRounding.AwayFromZero).ToString();
+                tempLow = Math.Round((decimal)forecast.Response.Daily.Data[2].TemperatureLow, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(tempHigh + "/" + tempLow);
+                precipProbPercentage = String.Format("{0:P2}", forecast.Response.Daily.Data[2].PrecipProbability).ToString();
+                currentWeatherData.Add(precipProbPercentage);
+
+                // CURRENT + 3
+                currentWeatherData.Add(forecast.Response.Daily.Data[3].Icon.ToString());
+                tempHigh = Math.Round((decimal)forecast.Response.Daily.Data[3].TemperatureHigh, MidpointRounding.AwayFromZero).ToString();
+                tempLow = Math.Round((decimal)forecast.Response.Daily.Data[3].TemperatureLow, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(tempHigh + "/" + tempLow);
+                precipProbPercentage = String.Format("{0:P2}", forecast.Response.Daily.Data[3].PrecipProbability).ToString();
+                currentWeatherData.Add(precipProbPercentage);
+
+                // CURRENT + 4
+                currentWeatherData.Add(forecast.Response.Daily.Data[4].Icon.ToString());
+                tempHigh = Math.Round((decimal)forecast.Response.Daily.Data[4].TemperatureHigh, MidpointRounding.AwayFromZero).ToString();
+                tempLow = Math.Round((decimal)forecast.Response.Daily.Data[4].TemperatureLow, MidpointRounding.AwayFromZero).ToString();
+                currentWeatherData.Add(tempHigh + "/" + tempLow);
+                precipProbPercentage = String.Format("{0:P2}", forecast.Response.Daily.Data[4].PrecipProbability).ToString();
+                currentWeatherData.Add(precipProbPercentage);
+
                 return currentWeatherData;
             }
             else
