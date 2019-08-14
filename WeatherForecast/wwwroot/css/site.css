@@ -45,7 +45,7 @@ body {
 
 div {
     margin: 0 auto;
-    max-width: 1024px;
+    /*max-width: 1024px;*/
 }
 
 header, footer {
@@ -60,23 +60,11 @@ ul, li {
 }
 
 ul {
-    width: 70%;
+    /*width: 70%;*/
     background-color: white;
-    /*text-align: center;*/
+    text-align: center;
     font-size: 0;
 }
-
-/*ul:hover > li {
-    opacity: 0.6;
-}
-
-ul li:hover {
-    opacity: 1;
-}
-
-ul li:active {
-    background: white;
-}*/
 
 li {
     padding: 30px 10px;
@@ -92,12 +80,12 @@ p {
 
 .current-day {
     background-color: #3399cc;
-    width: 50%;
+    width: 28%;
 }
 
 .future-day {
     background-color: #33cccc;
-    width: 25%;
+    width: 18%;
 }
 
 /** {
